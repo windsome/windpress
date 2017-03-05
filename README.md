@@ -4,6 +4,13 @@ This is a (React + Redux + Router + isomorphic + SASS/SCSS + webpack + nodejs + 
 Our backend conception comes from WordPress, database tables almost same as WordPress, MetaData, Post, User.
 clone project: `git clone https://github.com/windsome/airbnb-starter.git`
 
+# 一元夺宝效果
+![列表](doc/images/1.png)
+![详情](doc/images/2.png)
+![下注](doc/images/3.png)
+![个人](doc/images/4.png)
+![新建](doc/images/5.png)
+
 # structure
 1. `/server` contains server side code.
 2. `/src` contains client side code.
