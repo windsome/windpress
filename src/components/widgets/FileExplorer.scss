@@ -1,0 +1,59 @@
+.wrapper {
+  padding: 15px;
+}
+.pathinfo {
+  font-size: 1.4em;
+}
+:global {
+  .fe-toolbar.ul {
+    list-style:none;
+  }
+  .fe-toolbar li {
+    display: inline;
+    margin-left: 10px;
+    float:left;
+  }
+}
+.filetable {
+  background-color:#fff;
+}
+
+.fileicon {
+  width:30px;
+}
+
+.itemName {
+}
+.itemName .fileOperate {
+  display:none;
+}
+.itemName:hover .fileOperate {
+  display:block;
+}
+
+.cardContainer {
+  padding:10px;
+}
+.imgWrapper {
+  position:relative;
+  padding-bottom: 67%;  
+}
+.imgInner {
+  position: absolute;
+  max-height:100%;
+  max-width:100%;
+}
+.infoInner {
+  display:none;
+  position: absolute;
+  width: 200px;
+  height:100px;
+}
+.imgWrapper:hover .infoInner {
+  display:block;
+}
+.fileName {
+  white-space: nowrap;
+  text-overflow:ellipsis;
+  overflow: hidden;
+}

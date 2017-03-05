@@ -1,0 +1,47 @@
+.activeRoute {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.airbnbHeader {
+  height: 61px;
+  line-height: 61px;
+  display: block;
+  position: relative;
+  background-color: rgba(0,0,0,0.05);
+  z-index: 1000;
+  .comp {
+    font-size: 16px;
+    height: 100%;
+    box-sizing: border-box;
+    border-left: 1px solid #dce0e0;
+    padding: 0 19px;
+    .icon {
+      margin-left: 5px;
+      font-size: 24px;
+      height: 24px;
+    }
+    .avatar {
+      height: 24px;
+      width: 24px;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.numberBadge {
+  position: absolute;
+  top: -5px;
+  right: -15px;
+  padding: 0 4px;
+  border: {
+    style: solid;
+    width: 2px;
+    color: red;
+  }
+  background-color: transparent;
+  height: 16px;
+  line-height:10px;
+  font-size: 10px;
+  color: red;
+}

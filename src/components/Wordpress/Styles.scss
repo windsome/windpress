@@ -1,0 +1,110 @@
+$menu-bgcolor: #aaa;
+
+:global .wp-menu-container {
+  background-color:$menu-bgcolor;
+  width:100%;
+  margin:0;
+}
+
+:global .wp-menu {
+  display: inline-block;
+  font-size: 1em;
+  line-height: 1.2em;
+  border-radius: 0px;
+}
+
+:global .wp-menu-icon {
+  font-size: 1.2em;
+}
+
+:global .wp-sidebar-container {
+  height: 100%;
+  background-color:$menu-bgcolor;
+  border-width: 0;
+  margin:0;
+  padding:0;
+  float:left;
+}
+
+:global .wp-sidebar-text-show {
+  display:inline;
+}
+
+:global .wp-footer-container {
+  background-color:$menu-bgcolor;
+  width:100%;
+  margin:0;
+}
+
+:global .form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+ .form-signin-heading, .checkbox {
+  margin-bottom: 10px;
+}
+.checkbox {
+  font-weight: normal;
+}
+.form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-control:focus {
+  z-index: 2;
+}
+input[type="text"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+}
+
+:global {
+.weui_uploader_input_wrp {
+	float: left;
+	position: relative;
+  margin: 9px;
+	width: 100px;
+	height: 100px;
+	border: 1px solid #d9d9d9;
+  &:after, &:before {
+  	content: " ";
+	  position: absolute;
+    top: 50%;
+  	left: 50%;
+    -webkit-transform: translate(-50%,-50%);
+	  transform: translate(-50%,-50%);
+	  background-color: #d9d9d9;
+  }
+  &:before {
+	  width: 2px;
+	  height: 39.5px;
+  }
+  &:after {
+	  width: 39.5px;
+    height: 2px;
+  }
+}
+.weui_uploader_input {
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+}
+

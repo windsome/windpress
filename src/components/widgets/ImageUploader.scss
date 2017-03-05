@@ -1,0 +1,111 @@
+$cell-width:  100px !default;
+$cell-height:  100px !default;
+
+.weui_uploader_input_wrp {
+	float: left;
+	position: relative;
+	margin-right: 9px;
+	margin-bottom: 9px;
+	width: $cell-width;
+	height: $cell-height;
+	border: 1px solid #d9d9d9;
+  &:after, &:before {
+  	content: " ";
+	  position: absolute;
+    top: 50%;
+  	left: 50%;
+    -webkit-transform: translate(-50%,-50%);
+	  transform: translate(-50%,-50%);
+	  background-color: #d9d9d9;
+  }
+  &:before {
+	  width: 2px;
+	  height: 39.5px;
+  }
+  &:after {
+	  width: 39.5px;
+    height: 2px;
+  }
+}
+.weui_uploader_input {
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+.weui_uploader_file {
+  	position: relative;
+    float: left;
+    margin-right: 9px;
+    margin-bottom: 9px;
+    width: $cell-width;
+	  height: $cell-height;
+    background: no-repeat 50%;
+    background-size: cover;
+    text-align:center;
+}
+.weui_uploader_file_alt {
+   	position: absolute;
+    width: 100%;
+	  height: 100%;
+    text-align:left;
+}
+.weui_uploader_image_outer {
+   	position: absolute;
+    width: 100%;
+	  height: 100%;
+}
+
+.previewImageContainer {
+    display: block;
+    width:100px;
+    height:100px;
+    text-align:center;
+    float:left;
+}
+.responsive-imgwh {
+    max-height:100%;
+    max-width:100%;
+}
+
+.responsive-imgw {
+    width:100%;
+    height:auto;
+}
+.responsive-imgh {
+    height:100%;
+    width:auto;
+}
+.imgRemove {
+    position: absolute;
+    cursor: point;
+    left:0px;
+    top:0px;
+    height:30px;
+    width:30px;
+    background-color: #d9d9d9;
+    &:before 
+    { 
+        content: "X"; 
+	      position: absolute;
+        top: 50%;
+      	left: 50%;
+        -webkit-transform: translate(-50%,-50%);
+	      transform: translate(-50%,-50%);
+    }
+}
+.responsive-img-wrapper {
+    position:absolute;
+    height:100%;
+    width:100%;
+    text-align:center;
+}
+.responsive-img-outer {
+    position:relative;
+    padding-bottom:67%;
+    width:100%;
+}

@@ -1,0 +1,149 @@
+<html>
+<head>
+<title>JavaScript file upload</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<script type="text/javascript">
+Object.prototype.clone = function() {
+  var copy = (this instanceof Array) ? [] : {};
+  var obj = this;
+  for (attr in this) {
+    if (!obj.hasOwnProperty(attr)) continue;
+    copy[attr] = (typeof this[attr] == "object")?obj[attr].clone():obj[attr];
+  } 
+  return copy;
+};
+
+
+function clone(obj) {
+    // Handle the 3 simple types, and null or undefined
+    if (null == obj || "object" != typeof obj) return obj;
+
+    // Handle Date
+    if (obj instanceof Date) {
+        var copy = new Date();
+        copy.setTime(obj.getTime());
+        return copy;
+    }
+
+    // Handle Array
+    if (obj instanceof Array) {
+        var copy = [];
+        for (var i = 0; i < obj.length; i++) {
+            copy[i] = clone(obj[i]);
+        }
+        return copy;
+    }
+
+    // Handle Object
+    if (obj instanceof Object) {
+        var copy = {};
+        for (var attr in obj) {
+            if (obj.hasOwnProperty(attr)) copy[attr] = clone(obj[attr]);
+        }
+        return copy;
+    }
+
+    throw new Error("Unable to copy obj! Its type isn't supported.");
+}
+var upload = function() {
+    var photo = document.getElementById("photo");
+    return false;
+};
+
+var readfile = function(file) {
+    var reader1 = new FileReader();
+    var reader2 = new FileReader();
+    var reader3 = new FileReader();
+    var reader4 = new FileReader();
+
+    reader1.onload = reader2.onload = reader3.onload = reader4.onload = function (e) {
+        //$('#blah').attr('src', e.target.result);
+        console.log (e);
+        console.log ("length", e.target.result.length);
+        console.log (e.target.result);
+    }
+
+    reader1.readAsDataURL(file);
+    //reader2.readAsArrayBuffer(file);
+    //reader3.readAsText(file);
+    //reader4.readAsBinaryString(file);
+    
+}
+var aaaa = [];
+var change = function() {
+    var photo = document.getElementById("photo");
+    if (aaaa == null) aaaa[0] = Object.assign({}, photo.files);
+    else aaaa.push(Object.assign({}, photo.files));
+    //console.log (aaaa);
+    
+    var url = window.URL || window.webkitURL || window.mozURL;
+    var imglist = [];
+    var imgs = aaaa.map ((files)=>{
+        /*return files.map ((file) => {
+            var img = new Image;
+            if (url) {
+                img.src = url.createObjectURL(file);
+                img.width=100;
+                img.height=100;
+            }
+            imglist.push(img);
+            return img;
+        });*/
+        for (var i = 0, file; file = files[i]; i++) {
+            var img = new Image;
+            if (url) {
+                img.src = url.createObjectURL(file);
+                img.width=100;
+                img.height=100;
+            }
+            readfile (file);
+            imglist.push(img);
+            //return img;
+        }
+        return imglist;
+    })
+    console.log (imglist);
+    var imgcon = document.getElementById("aaaa");
+    if (imgcon.childNodes && imgcon.childNodes[0]) imgcon.removeChild(imgcon.childNodes[0]);
+    var con2 = document.createElement('div');
+    //for (var i = 0; i < imgs.length; i++) con2.appendChild(imgs[i]);
+    for (var i = 0; i < imglist.length; i++) con2.appendChild(imglist[i]);
+    imgcon.appendChild(con2);
+}
+var change2 = function() {
+    var photo = document.getElementById("photo");
+    if (aaaa == null) aaaa[0] = Object.assign({}, photo.files[0]);
+    else aaaa.push(Object.assign({}, photo.files[0]));
+    console.log (aaaa);
+    
+    var url = window.URL || window.webkitURL || window.mozURL;
+    var imgs = aaaa.map ((files)=>{
+        var img = new Image;
+        if (url) {
+            img.src = url.createObjectURL(files);
+            img.width=100;
+            img.height=100;
+        }
+        return img;
+    })
+    var imgcon = document.getElementById("aaaa");
+    if (imgcon.childNodes && imgcon.childNodes[0]) imgcon.removeChild(imgcon.childNodes[0]);
+    var con2 = document.createElement('div');
+    for (var i = 0; i < imgs.length; i++) con2.appendChild(imgs[i]);
+    imgcon.appendChild(con2);
+}
+</script>
+</head>
+<body>
+
+<form action="/" method="post" onsubmit="return upload();">
+  <fieldset>
+    <legend>Upload photo</legend>
+    <div id='aaaa'></div>
+    <input type="file" name="photo" id="photo" onchange="return change();" multiple>
+    <input type="submit" value="Upload" >
+  </fieldset>
+</form>
+
+</body>
+</html>

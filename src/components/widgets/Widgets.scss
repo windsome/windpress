@@ -1,0 +1,119 @@
+.responsive-imgwh {
+    max-height:100%;
+    max-width:100%;
+}
+.responsive-imgw {
+    width:100%;
+    height:auto;
+}
+.responsive-imgh {
+    height:100%;
+    width:auto;
+}
+.responsive-img-wrapper {
+    position:absolute;
+    height:100%;
+    width:100%;
+    text-align:center;
+}
+.responsive-img-outer {
+    position:relative;
+    padding-bottom:67%;
+    width:100%;
+}
+.text-center {
+    text-align: center;
+}
+.listing-img-container {
+    z-index: 1;
+    overflow: hidden;
+}
+.media-photo {
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+    position: relative;
+    display: inline-block;
+    vertical-align: bottom;
+    overflow: hidden;
+    background-color: #bbb;
+}
+.media-cover, .media-cover-dark::after {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.target-control {
+	position: absolute;
+	height: 100%;
+	cursor: pointer;
+	z-index: 1;
+	background: none;
+	border: 0;
+}
+.target-next {
+	right: 0;
+	width: 25%;
+}
+.target-prev {
+	left: 0;
+	width: 25%;
+}
+.imageContainer {
+	width: 100% !important;
+	position: relative !important;
+	padding-bottom: 67% !important;
+	min-height: 200px !important;
+	background-color: #D8D8D8 !important;
+}
+.icon {
+	font-style: normal;
+	font-weight: normal;
+	line-height: 1;
+}
+.icon-size-2 {
+	font-size: 2.4em;
+}
+.icon-white {
+	color: #fff;
+}
+
+.infoContainer {
+	padding-top: 12px !important;
+  padding-left: 12px;
+  text-align: left;
+}
+.linkContainer {
+	display: block !important;
+}
+.text_size_regular_weight_bold_inline {
+	font-weight: 700 !important;
+	color: #484848 !important;
+	font-family: Circular !important;
+	margin: 0px !important;
+	word-wrap: break-word !important;
+	font-size: 19px !important;
+	line-height: 24px !important;
+	letter-spacing: undefined !important;
+	padding-top: 0px !important;
+	padding-bottom: 0px !important;
+	display: inline !important;
+}
+.text_size_small_weight_light_inline {
+	font-weight: 200 !important;
+	color: #484848 !important;
+	font-family: Circular !important;
+	margin: 0px !important;
+	word-wrap: break-word !important;
+	font-size: 15px !important;
+	line-height: 18px !important;
+	letter-spacing: 0.2px !important;
+	padding-top: 0px !important;
+	padding-bottom: 0px !important;
+	display: inline !important;
+}
+.detailContainer {
+	white-space: nowrap !important;
+}

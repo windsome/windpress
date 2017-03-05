@@ -1,0 +1,81 @@
+.activeRoute {
+  font-weight: bold;
+  text-decoration: underline;
+}
+.navChange {
+	background-color: #fff;
+	padding: 12px 0;
+	box-shadow: 0 0 3px #ccc;
+	font-weight: 500;
+  border-color: #e7e7e7;
+  top: 0;
+  border-width: 0 0 1px;
+}
+
+.logo {
+	height: 50px;
+	width: 199px;
+  padding: 0px;
+  margin: 0px;
+  margin-left: 15px !important;
+}
+.onlineLayer {
+	position: fixed;
+	right: -140px;
+	top: 30%;
+	z-index: 20;
+}
+
+.services {
+	background-color: #00a7ea;
+	padding: 60px 0;
+	text-align: center;
+	background-size: cover;
+}
+.services H2 {
+	color: #fff;
+}
+.services H3 {
+	color: #fff;
+}
+.services hr {
+	display: block;
+	height: 3px;
+	border: 0;
+	margin: 3em 0;
+	padding: 0;
+	background-image: -moz-linear-gradient(left,rgba(255,255,255,0),#71c9d6,rgba(255,255,255,0));
+	width: 50%;
+	left: 25%;
+	position: relative;
+	border: none;
+}
+
+.contact {
+	background-color: #00a7ea;
+	color: #fff;
+	padding: 60px 0;
+	text-align: center;
+}
+
+.footerwrap {
+	background: #2b2b2b;
+	border-bottom: 1px solid #ddd;
+	text-align: center;
+}
+.copyright {
+	line-height: 40px;
+	color: #888;
+	font-weight: 400;
+}
+
+:global {
+  .row {
+    margin-left:0px;
+    margin-right:0px;
+  }
+  .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
+	  color: #00a7ea;
+	  background-color: transparent;
+  }
+}
