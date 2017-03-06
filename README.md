@@ -1,5 +1,5 @@
 # What's This?
-This is a (React + Redux + Router + isomorphic + SASS/SCSS + webpack + nodejs + express) starter kit, base from [react-redux-starter-kit](https://github.com/davezuko/react-redux-starter-kit). It saves your time in construct a base runnable suit. 
+This is a (React + Redux + Router + isomorphic + SASS/SCSS + webpack + nodejs + koa2) starter kit, base from [react-redux-starter-kit](https://github.com/davezuko/react-redux-starter-kit). It saves your time in construct a base runnable suit. 
 
 clone project: `git clone https://github.com/windsome/one.git`
 
@@ -14,7 +14,7 @@ clone project: `git clone https://github.com/windsome/one.git`
 1. `/server` contains server side code.
 2. `/src` contains client side code.
 3. `/bin /config /build`, contains build code.
-4. `/doc` contains more doc. [read more tips](doc/tips.md)
+4. `/doc` contains more doc. [read more tips](doc/README.md)
 
 
 # usage1: development use
@@ -24,7 +24,8 @@ cd one
 npm install  #(in china, when install scss-node, may face a timeout problem, you can use taobao mirror. see [cnpm](doc/tip_cnpm.md) )
 npm start
 ```
-then, you can open browser, and visit http://localhost:3000
+then, you can open browser, and visit http://localhost:3000 。 For preview, you can visit <http://mp.qingshansi.cn/coin> using wechat browser.
+
 
 # usage2: build frontend code to /dist, run server code in /server
 same as original [react-redux-starter-kit](https://github.com/davezuko/react-redux-starter-kit).
@@ -46,7 +47,7 @@ difference with original [react-redux-starter-kit](https://github.com/davezuko/r
 ```
 
 # Tips, see all tips.
-[read all tips](doc/tips.md)
+[read all tips](doc/README.md)
 
 # 问题一：使用npm安装一些包失败了的看过来（npm国内镜像介绍）
 见 [淘宝npm镜像registry及cnpm](doc/tip_cnpm.md)
