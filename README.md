@@ -1,8 +1,7 @@
 # What's This?
-This is a (React + Redux + Router + isomorphic + SASS/SCSS + webpack + nodejs + express) starter kit, base from [react-redux-starter-kit](https://github.com/davezuko/react-redux-starter-kit). It saves your life in construct a base runnable suit. I need your help to improve it.
+This is a (React + Redux + Router + isomorphic + SASS/SCSS + webpack + nodejs + express) starter kit, base from [react-redux-starter-kit](https://github.com/davezuko/react-redux-starter-kit). It saves your time in construct a base runnable suit. 
 
-Our backend conception comes from WordPress, database tables almost same as WordPress, MetaData, Post, User.
-clone project: `git clone https://github.com/windsome/airbnb-starter.git`
+clone project: `git clone https://github.com/windsome/one.git`
 
 # 一元夺宝效果
 ![列表](doc/images/1.png)
@@ -21,7 +20,7 @@ clone project: `git clone https://github.com/windsome/airbnb-starter.git`
 # usage1: development use
 same as original [react-redux-starter-kit](https://github.com/davezuko/react-redux-starter-kit).
 ```
-cd airbnb-starter
+cd one
 npm install  #(in china, when install scss-node, may face a timeout problem, you can use taobao mirror. see [cnpm](doc/tip_cnpm.md) )
 npm start
 ```
@@ -58,9 +57,6 @@ difference with original [react-redux-starter-kit](https://github.com/davezuko/r
 
 # 一元夺宝项目
 前端代码位于 src/routes/Coin， 后端使用post存储商品信息，order存储订单信息，每个商品对应的抽奖信息（抽奖随机数，抽中序号，应该放在postmeta表中），见 [一元夺宝](doc/api_coin.md)
-
-# 协鑫储能监控项目
-前端代码位于 src/routes/Energy， 后端API使用energyApi，见 [协鑫储能](doc/api_xiexin.md)
 
 
 
