@@ -114,10 +114,10 @@ const config = {
   // ----------------------------------
   // Https Configuration
   // ----------------------------------
-  https : {
-    key: fs.readFileSync(__dirname + '/2_mp.lancertech.net.key'), 
-    cert: fs.readFileSync(__dirname + '/1_mp.lancertech.net_cert.crt') 
-  }
+  //https : {
+  //  key: fs.readFileSync(__dirname + '/2_mp.lancertech.net.key'), 
+  //  cert: fs.readFileSync(__dirname + '/1_mp.lancertech.net_cert.crt') 
+  //}
 }
 
 /************************************************

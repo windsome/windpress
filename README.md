@@ -1,59 +1,50 @@
-# What's This?
-This is a (React + Redux + Router + isomorphic + SASS/SCSS + webpack + nodejs + express) starter kit, base from [react-redux-starter-kit](https://github.com/davezuko/react-redux-starter-kit). It saves your life in construct a base runnable suit. I need your help to improve it.
+## Project Introduction
+The front-end code is located in src/routes/Coin, the backend uses the post to store the product information, order stores the order information, the corresponding lottery information for each item (lottery random number, the serial number should be placed in the postmeta table), see [ Treasure] (doc/api_coin.md)
 
-Our backend conception comes from WordPress, database tables almost same as WordPress, MetaData, Post, User.
-clone project: `git clone https://github.com/windsome/airbnb-starter.git`
+## Setting
 
-# structure
-1. `/server` contains server side code.
-2. `/src` contains client side code.
-3. `/bin /config /build`, contains build code.
-4. `/doc` contains more doc. [read more tips](doc/tips.md)
+Change db, wechat, wechatPay in config/cfg.coin.lancertech.js
 
+## Run
 
-# usage1: development use
-same as original [react-redux-starter-kit](https://github.com/davezuko/react-redux-starter-kit).
-```
-cd airbnb-starter
-npm install  #(in china, when install scss-node, may face a timeout problem, you can use taobao mirror. see [cnpm](doc/tip_cnpm.md) )
-npm start
-```
-then, you can open browser, and visit http://localhost:3000
-
-# usage2: build frontend code to /dist, run server code in /server
-same as original [react-redux-starter-kit](https://github.com/davezuko/react-redux-starter-kit).
 ```
 npm install
-npm run deploy:prod
-npm run startprod
+redis-server
+npm start
 ```
 
-# usage3: build frontend code to /dist, build server code to /sdist. really deploy to remote cloud.
-difference with original [react-redux-starter-kit](https://github.com/davezuko/react-redux-starter-kit).
+then, you can open browser, and visit http://localhost:3000, http://yourlocalip:3000 is better.
+
+## Problems encountered
+1. Use npm to install some packages failed to see over (npm domestic mirror introduction)
+     See [Taobao npm mirror registry and cnpm] (doc / tip_cnpm.md)
+2. How to use node-inspector for nodejs debugging
+3. React component attributes sometimes do not appear to see if the name of the property is not the size of the problem?
+
+
+# 中文介绍
+
+## 项目介绍
+前端代码位于 src/routes/Coin， 后端使用post存储商品信息，order存储订单信息，每个商品对应的抽奖信息（抽奖随机数，抽中序号，应该放在postmeta表中），见 [一元夺宝](doc/api_coin.md)
+
+## 设置
+在config/cfg.coin.lancertech.js设置数据库，微信，微信支付
+
+## 运行
+
 ```
- npm install
- npm run deploy:prod
- # compile servercode to /sdist.
- npm run deploy:prodserver
- # run from sdist
- npm run startprod2
+npm install
+redis-server
+npm start
 ```
 
-# Tips, see all tips.
-[read all tips](doc/tips.md)
+然后，你打开浏览器，浏览http://localhost:3000，最好用http://yourlocalip:3000。
 
-# 可能遇到的问题
+## 遇到的问题
 1. 使用npm安装一些包失败了的看过来（npm国内镜像介绍）
     见 [淘宝npm镜像registry及cnpm](doc/tip_cnpm.md)
 2. 如何使用 node-inspector进行nodejs的调试
 3. react组件属性有时总不出现，看看是不是属性名大小写出了问题？
-
-# 项目介绍
-1. 一元夺宝项目
-前端代码位于 src/routes/Coin， 后端使用post存储商品信息，order存储订单信息，每个商品对应的抽奖信息（抽奖随机数，抽中序号，应该放在postmeta表中），见 [一元夺宝](doc/api_coin.md)
-
-2. 协鑫储能监控项目
-前端代码位于 src/routes/Energy， 后端API使用energyApi，见 [协鑫储能](doc/api_xiexin.md)
 
 
 

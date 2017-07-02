@@ -28,7 +28,7 @@ const port = config.server_port
 const port_https = config.server_port_https
 
 http.createServer(server.callback()).listen(port);
-https.createServer( config.https, server.callback() ).listen(port_https);
+//https.createServer( config.https, server.callback() ).listen(port_https);
 
 debug(`Server is now running at http://${host}:${port}.`)
 debug(`Https Server is now running at http://${host}:${port_https}.`)
