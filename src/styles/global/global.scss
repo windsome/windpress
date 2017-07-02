@@ -9,6 +9,16 @@ $icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
 $fa-font-path:        "~font-awesome/fonts/";
 @import '~font-awesome/scss/font-awesome.scss';
 
+// for react-slick, slick-carousel.
+@function font-url($url) {
+   @return './slick/font/'+$url;
+}
+@function image-url($url) {
+   @return './slick/'+$url;
+}
+@import './slick/slick.scss';
+@import './slick/slick-theme.scss';
+
 /*
 html {
   font-size: 1rem;

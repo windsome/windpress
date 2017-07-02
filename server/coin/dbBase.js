@@ -64,7 +64,13 @@ export async function findAll($table, $where, $options = null) {
     var objs = instances && (instances.length > 0) && instances.map((instance)=>{
         return instance.get({ plain:true });
     });
-    return { count: objs.length, data: objs };
+
+    var page=0;
+    var limit = $options.limit || 0;
+    if (limit) {
+        page = $options && $options.offset && parseInt($options.offset / limit) || 0;
+    }
+    return { total: objs.length, count: objs.length, date: new Date(), page, limit, data: objs };
 }
 
 export async function findOneV2($table, $options) {
@@ -88,7 +94,13 @@ export async function findAllV2($table, $options) {
     var objs = instances && (instances.length > 0) && instances.map((instance)=>{
         return instance.get({ plain:true });
     });
-    return { data: objs };
+
+    var page=0;
+    var limit = $options.limit || 0;
+    if (limit) {
+        page = $options && $options.offset && parseInt($options.offset / limit) || 0;
+    }
+    return { total: objs.length, count: objs.length, date: new Date(), page, limit, data: objs };
 }
 
 export async function findAndCountAll($table, $options) {
@@ -104,7 +116,13 @@ export async function findAndCountAll($table, $options) {
     var objs = result.rows && (result.rows.length > 0) && result.rows.map((instance)=>{
         return instance.get({ plain:true });
     });
-    return { count: result.count, data: objs };
+
+    var page=0;
+    var limit = $options.limit || 0;
+    if (limit) {
+        page = $options && $options.offset && parseInt($options.offset / limit) || 0;
+    }
+    return { total: result.count, count: objs.length, date: new Date(), page, limit, data: objs };
 }
  
 export async function bulkCreate($table, $records) {

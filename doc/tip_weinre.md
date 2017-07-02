@@ -3,6 +3,8 @@
 + 首先安装weinre
 + 调试步骤：
   1. 终端运行：
+    weinre --boundHost -all- --httpPort 9090
+      or
     weinre --boundHost 192.168.1.7 --httpPort 9090
 
   2. 用基于webkit的浏览器如chrome打开如下链接

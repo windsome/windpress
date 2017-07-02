@@ -1,0 +1,104 @@
+.slideWrap {
+  position: relative;
+  background-color: #d8d8d8; 
+  min-height: 200px; 
+  width: 100%; 
+  padding-bottom: 100%;
+}
+
+.slideImageWrap { 
+  position: absolute; 
+  display: inline-block; 
+  background-color: #bbb;
+  overflow: hidden; 
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0; 
+//  z-index: 1; 
+  overflow: hidden; 
+  text-align: center; 
+  vertical-align: bottom;
+}
+
+.slideCtrl {
+	position: absolute;
+	height: 100%;
+	cursor: pointer;
+//	z-index: 1;
+	background: none;
+	border: 0;
+}
+.slideCtrlNext {
+	right: 0;
+	width: 25%;
+}
+.slideCtrlPrev {
+	left: 0;
+	width: 25%;
+}
+
+:global .ReactModal__Body--open {
+    overflow: hidden;
+}
+
+.modalOverlay {
+  position          : fixed;
+  top               : 0;
+  left              : 0;
+  right             : 0;
+  bottom            : 0;
+  background-color  : rgba(255, 255, 255, 0.75);
+  z-index           : 2017;
+}
+
+.modalContent {
+  position: absolute;
+  top: auto;
+  left: 40px;
+  right: 40px;
+  bottom: 5px;
+  background-color: papayawhip;
+}
+
+.w-number {
+    padding: 0 24px;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+}
+.w-number-btn {
+    box-sizing: content-box;
+    font-size: 22px;
+    width: 30px;
+    height: 30px;
+    line-height: 28px;
+    text-decoration: none;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    overflow: hidden;
+    background: #fff;
+    color: #999;
+    border: 1px solid #e0e0e0;
+}
+.w-number-btn-plus {
+    right: 0;
+    top: 0;
+}
+.w-number-btn-minus {
+    right: auto;
+    left: 0;
+    top: 0;
+}
+.w-number-input {
+    box-sizing: content-box;
+    font-size: 16px;
+    text-align: center;
+    width: 74px;
+    border: 1px solid #e0e0e0;
+    height: 26px;
+    padding: 2px 4px;
+    outline: none;
+}
+

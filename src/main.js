@@ -103,5 +103,5 @@ if (__DEV__) {
 try {
 render()
 } catch (e) {
-    console.log ("main", e);
+    console.log ("main", JSON.stringify(e));
 }

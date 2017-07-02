@@ -151,7 +151,7 @@ export const imageFileListScale = async (files, opts) => {
         var dest = await imageFileScale (files[i], opts);
         list.push (dest);
         var percent = 100 * (i+1) / files.length;
-        if (opts && opts.onProgress) opts.onProgress (percent);
+        opts && opts.onProgress && opts.onProgress (percent);
     }
     return list;
 }

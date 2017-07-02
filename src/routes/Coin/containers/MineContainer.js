@@ -1,12 +1,16 @@
 import { connect } from 'react-redux'
-import { goBack } from 'react-router-redux'
+import { goBack, push, replace } from 'react-router-redux'
+import { doLogout } from '../modules/user'
 
 const mapDispatchToProps = {
     goBack,
+    push,
+    replace,
+
+    doLogout,
 }
 
 const mapStateToProps = (state) => ({
-    wxoauth: state.wxoauth,
     cuser: state.cuser,
 })
 

@@ -55,7 +55,9 @@ const config = {
     'react-redux',
     'react-router',
     'react-router-redux',
-    'redux'
+    'redux',
+    'moment',
+    'lodash',
   ],
   compiler_vendor2 : [
       'd3',
@@ -86,7 +88,7 @@ const config = {
   //     storage: "./tmp/db.development.sqlite"
   //   }
   // },
-  dbCoin : {
+  db : {
     database: "wpcoin",
     username: "youruser",
     password: "yourpassword",
@@ -110,39 +112,11 @@ const config = {
   },
 
   // ----------------------------------
-  // Wechat Configuration
-  // ----------------------------------
-  wechat : {
-    appId:'yourappId', 
-    appSecret:'yourappSecret', 
-    origin:'gh_9e62dd855eff'
-  },
-
-  // ----------------------------------
-  // Wechat Configuration
-  // ----------------------------------
-  wechatMsg : {
-    token:'your token'
-  },
-
-  // ----------------------------------
-  // Mqtt Configuration
-  // ----------------------------------
-  mqtt : {
-    url : 'mqtts://mqtt.lancertech.net',
-    prefix: '/broker/smartlock1/',
-    port: 8883,
-    host: 'mqtt.lancertech.net',
-    //The CA list will be used to determine if server is authorized
-    //ca: fs.readFileSync(__dirname + '/ca.mqtt.lock.cer')
-  },
-
-  // ----------------------------------
-  // Mqtt Configuration
+  // Https Configuration
   // ----------------------------------
   https : {
-    //key: fs.readFileSync(__dirname + '/2_mp.lancertech.net.key'), 
-    //cert: fs.readFileSync(__dirname + '/1_mp.lancertech.net_cert.crt') 
+    key: fs.readFileSync(__dirname + '/2_mp.lancertech.net.key'), 
+    cert: fs.readFileSync(__dirname + '/1_mp.lancertech.net_cert.crt') 
   }
 }
 
@@ -240,4 +214,6 @@ if (overrides) {
   debug('No environment overrides found, defaults will be used.')
 }
 
-export default config
+var nextcfg = require('./cfg.coin.lancertech').default(config);
+export default nextcfg;
+//export default config

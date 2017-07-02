@@ -9,6 +9,9 @@ export const ERR_INSERT_DB_FAIL = 40005;
 export const ERR_UPDATE_DB_FAIL = 40006;
 export const ERR_ALREADY_EXIST = 40007;
 export const ERR_MISS_REQUIRE = 40008;
+export const ERR_SYSTEM_ERROR = 40009;
+export const ERR_NOT_ALLOW = 40018;
+export const ERR_NOT_OWNER = 40019;
 export const ERR_USER_NO_BASEINFO = 40020;
 export const ERR_USER_DUP_LOGIN = 40021;
 export const ERR_USER_DUP_EMAIL = 40022;
@@ -18,9 +21,11 @@ export const ERR_USER_UPD_NO_USER = 40025;
 export const ERR_USER_AUTH_NO_USER = 40026;
 export const ERR_USER_AUTH_WRONG_PASS = 40027;
 export const ERR_USER_NO_CAP = 40028;
+export const ERR_USER_NOT_LOGIN = 40029;
 export const ERR_TAXONOMY_DUP_TERM = 40030;
 export const ERR_POST_TYPE_CHANGE_NOT_ALLOW = 40040;
 export const ERR_POST_MISS_REQUIRE = 40041;
+export const ERR_ORDER_COUNT_OVERFLOW = 40050;
 
 // XIEXIN ENERGY SPECIAL ERROR CODE
 export const XXE_UNKNOWN = 40101;

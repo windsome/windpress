@@ -102,3 +102,9 @@
     outline: none;
 }
 
+.userDetailOpenid  .detail {
+  display:none
+}
+.userDetailOpenid:hover  .detail {
+  display:block;
+}

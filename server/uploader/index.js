@@ -195,6 +195,7 @@ export default class Uploader {
         var start = parseInt(fields.start) || 0;
         var end = parseInt(fields.end) || 0;
 
+        name = decodeURIComponent(name || '');
         //var destname = hash+"."+size+"."+name;
         var destname = hash+"."+name;
         const filepath = path.join(this.uploads, destname);

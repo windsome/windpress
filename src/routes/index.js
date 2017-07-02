@@ -2,8 +2,8 @@
     PlainRoute objects to build route definitions.   */
 
 // We only need to import the modules necessary for initial render
-import EmptyLayout from '../layouts/EmptyLayout/EmptyLayout'
 import CoinRoute from './Coin'
+import PayRoute from './Pay'
 
 export const createRoutes = (store) => ({
     path: '/',
@@ -15,6 +15,7 @@ export const createRoutes = (store) => ({
 
     childRoutes: [
         CoinRoute(store),
+        PayRoute(store),
     ]
 })
 

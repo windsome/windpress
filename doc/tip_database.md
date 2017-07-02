@@ -21,6 +21,6 @@ mysql -u root -p123456
 drop database com_safety999_www;
 ```
 6. 创建超级用户
-GRANT ALL PRIVILEGES ON *.* TO admin@localhost IDENTIFIED BY 'ZMdoc@018' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON *.* TO admin@localhost IDENTIFIED BY '<this_is_password>' WITH GRANT OPTION;
 FLUSH PRIVILEGES;
 

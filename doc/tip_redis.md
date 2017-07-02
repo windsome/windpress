@@ -1,4 +1,11 @@
-# 使用node-redis时，默认是使用callback的异步模式，怎么改成async/await模式？
+### redis-cli用法
+1. 运行 redis-cli进入redis命令行
+2. keys * 查看当前所有键值
+3. get KEY，得到某个键值的内容
+4. hgetall KEY, 得到某个以哈希存储的值。
+    <http://www.runoob.com/redis/redis-hashes.html>
+
+### 使用node-redis时，默认是使用callback的异步模式，怎么改成async/await模式？
 参考 [极品好文：Tips for using async functions](http://www.2ality.com/2016/10/async-function-tips.html)
 ```
 1, callback模式：
@@ -33,7 +40,7 @@ const redis_fn = function (fn, arg) {
 [thunkify和co的结合](http://www.cnblogs.com/wofeiwofei/p/5462387.html)  
 [JavaScript里function函数实现可变参数(多态）](http://www.oschina.net/question/54100_15938)  
 
-#  Error: session store is unavailable
+###  Error: session store is unavailable
 ```
   Error: session store is unavailable
       at Object.getSession (/data/nodejs/windpress/node_modules/.1.11.4@koa-generic-session/lib/session.js:181:13)

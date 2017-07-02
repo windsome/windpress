@@ -196,20 +196,21 @@ export const hash$UploadFile = async (src, opts) => {
       src: File or Blob.
       opts: {
       chunkSize:1024*1024,
-      onProgress: (percent)=>{xdebug(percent);}
+      hashProgress: (percent)=>{xdebug(percent);}
+      uploadProgress: (percent)=>{xdebug(percent);}
       filename:'noname',
       }
       output: md5sum
       fail: Error
      */
-    const onProgress1 = (percent) => {
-        xdebug ("hash$UploadFile", parseInt(percent*0.5));
+    const hashProgress = (percent) => {
+        xdebug ("hashFile", parseInt(percent*0.5));
     }
-    const onProgress2 = (percent) => {
-        xdebug ("hash$UploadFile", parseInt(50+percent*0.5));
+    const uploadProgress = (percent) => {
+        xdebug ("UploadFile", parseInt(50+percent*0.5));
     }
-    var hash = await calMd5sum (src, { onProgress: onProgress1 })
-    var ret2 = await uploadFile (src, { ...opts, hash, onProgress: onProgress2 });
+    var hash = await calMd5sum (src, { onProgress: opts.hashProgress || hashProgress })
+    var ret2 = await uploadFile (src, { ...opts, hash, onProgress: opts.uploadProgress || uploadProgress });
     return ret2;
 }
 
@@ -219,7 +220,8 @@ export const hash$UploadDataURLs = async (srcList, opts) => {
       [{dataURL, filename, width, height} ... ]
       opts: {
       chunkSize:1024*1024,
-      onProgress: (percent)=>{xdebug(percent);}
+      hashProgress: (percent)=>{xdebug(percent);}
+      uploadProgress: (percent)=>{xdebug(percent);}
       }
       output: md5sum
       fail: Error
@@ -228,10 +230,7 @@ export const hash$UploadDataURLs = async (srcList, opts) => {
     for (var i = 0; i < srcList.length; i++) {
         var src = srcList[i];
         var blob = dataURL2Blob (src.dataURL);
-        const onProgress = (percent) => {
-            xdebug ("hash$UploadFile", parseInt(percent*(i+1)/srcList.length));
-        }
-        var ret = await hash$UploadFile (blob, {filename: src.filename, onProgress});
+        var ret = await hash$UploadFile (blob, {filename: src.filename, ...opts});
         retList.push (ret);
     }
     return retList;

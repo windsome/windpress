@@ -1,12 +1,21 @@
 import { connect } from 'react-redux'
-import { goBack } from 'react-router-redux'
+import { goBack, push, replace } from 'react-router-redux'
+import { searchPosts } from '../modules/post'
 
 const mapDispatchToProps = {
     goBack,
+    push,
+    replace,
+
+    retrievePosts: searchPosts,
 }
 
 const mapStateToProps = (state) => ({
-    images:['/uploads/1.jpg','/test/1.jpg','/test/2.jpg','/test/3.jpg','/test/4.jpg','/test/5.jpg','/test/6.jpg'],
+    pageName: '查找',
+    postStatus: state.cpost && state.cpost.search,
+    postDb: state.cpost && state.cpost.db,
+
+    cuser: state.cuser,
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(require('../components/Search').default)

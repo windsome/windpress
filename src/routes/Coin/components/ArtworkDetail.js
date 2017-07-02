@@ -12,11 +12,11 @@ export default class Page extends Component {
 
     componentDidMount() {
         var { params, cpost, retrievePosts } = this.props;
-        if (params && params.id) {
-            if (cpost && cpost.db && cpost.db[params.id]) {
+        if (params && params.postId) {
+            if (cpost && cpost.db && cpost.db[params.postId]) {
                 xdebug ("already have this post, no need to retrieve again!");
             } else 
-                retrievePosts (params.id);
+                retrievePosts (params.postId);
         }
     }
 
@@ -25,7 +25,7 @@ export default class Page extends Component {
 
     render () {
         var {goBack, cpost, params} = this.props;
-        var postId = params && params.id;
+        var postId = params && params.postId;
         var post = cpost && cpost.db && cpost.db[postId];
         var images = post && post.images || ['/images/none.jpg'];
         var imgList = images && images.map ((item, index)=>{

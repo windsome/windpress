@@ -16,6 +16,7 @@ import webpackHMRMiddleware from './middleware/webpack-hmr'
 
 const paths = config.utils_paths
 const app = new Koa()
+app.proxy = true;
 
 var session = require('koa-generic-session');
 var RedisStore = require('koa-redis');
@@ -30,30 +31,37 @@ app.use(convert(session({
   store: rstore
 })));
 
+var bodyParser = require('koa-bodyparser');
+app.use(convert(bodyParser()));
+
 app.use(async (ctx, next) => {
-    console.log ("["+ctx.method+"] "+ctx.path+", query=", ctx.query);
+    const cookieHeader = ctx.headers.cookie;
+    //ctx.originalQuery = ctx.query;
+    //ctx.originalHref = ctx.request.href;
+    console.log ("["+ctx.method+"] "+ctx.path+", query=", ctx.query, ", referer=", ctx.req.headers.referer, ", cookies=", cookieHeader);
     //console.log ("["+ctx.method+"] "+ctx.path+", query=", ctx.query, ", session=", ctx.session);
     await next();
 })
-
-var bodyParser = require('koa-bodyparser');
-app.use(convert(bodyParser()));
 
 //var json = require('koa-json'); // response json body.
 //app.use(convert(json()));
 
 import UploaderApis from './uploader';
-var uploader = new UploaderApis(app);
+app.uploader = new UploaderApis(app);
 
-import WxoauthApis from './wxoauth';
-var Wxoauth = new WxoauthApis(app);
-import CoinApis from './coin';
-var Coin = new CoinApis(app);
+var WechatApis = require('./wechat').default;
+app.wechat = new WechatApis(app);
+var CoinApis = require('./coin').default;
+app.coin = new CoinApis(app);
 
 // Enable koa-proxy if it has been enabled in the config.
 if (config.proxy && config.proxy.enabled) {
   app.use(convert(proxy(config.proxy.options)))
 }
+
+// uploads folder, for upload/download.
+app.use(serve(paths.uploads()))
+app.use(mount('/uploads', serve(paths.uploads())));
 
 // This rewrites all routes requests to the root /index.html file
 // (ignoring file requests). If you want to implement isomorphic
@@ -62,9 +70,13 @@ app.use(convert(historyApiFallback({
   verbose: false
 })))
 
-// uploads folder, for upload/download.
-app.use(serve(paths.uploads()))
-app.use(mount('/uploads', serve(paths.uploads())));
+
+// react-router urls will be redirect to /index.html,
+// then, we will check cookies of the request to /index.html, 
+// to determine whether is 1: a cookie login, 
+// or 2: wechat redirect with code & state.
+// or 3: none authorized(not login) visit.
+app.use(app.coin.indexHtmlProcessor ());
 
 // ------------------------------------
 // Apply Webpack HMR Middleware

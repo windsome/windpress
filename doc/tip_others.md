@@ -64,4 +64,30 @@ Some additional rules to follow:
 
 3. Use CSS media queries to apply different styling for small and large screens - Setting large absolute CSS widths for page elements, will cause the element to be too wide for the viewport on a smaller device. Instead, consider using relative width values, such as width: 100%. Also, be careful of using large absolute positioning values. It may cause the element to fall outside the viewport on small devices.
 
+## 微信云服务器不使用ubuntu的镜像，用apt-get install安装软件失败问题
+今天安装nginx时候碰到一个问题
+通过执行 ``` add-apt-repository ppa:ondrej/php5 ```命令来添加nginx 的ppa的时候发现 命令找不到
+root@ubuntu:~# sudo add-apt-repository
+ppa:nginx/stable
+sudo: add-apt-repository: command not found
+经过 搜索才知道 add-apt-repository 是由 Python-software-properties 这个工具包提供的
+所以要先安装python-software-properties 才能使用 add-apt-repository
+apt-get install python-software-properties
+但有时腾讯云已经去掉原来的源了，设置成了腾讯云镜像，会找不到很多软件，这时连python-software-properties也装不了。
+此时可以直接编辑/etc/apt/source.list这个文件
+```
+deb http://cn.archive.ubuntu.com/ubuntu/ trusty main restricted
+deb-src http://cn.archive.ubuntu.com/ubuntu/ trusty main restricted
+```
+通过这中方式的话要要手工添加该源的keyserver
+之后就是apt-get update ，如果没有添加keyserver会报错
+```The following signatures couldn't be verified because the public key is not available: NO_PUBKEY 16126D3A3E5C1192 ```
+这个非官方源是不可信任的，解决办法是导入该源的公钥。 
+gpg --keyserver subkeys.pgp.net --recv 16126D3A3E5C1192 
+gpg --export --armor 16126D3A3E5C1192 | sudo apt-key add - 
+sudo apt-get update 
+这里将subkeys.pgp.net换成keyserver.ubuntu.com
+接下来就可以直接安装nginx了，apt-get install nginx 
+如果有add-apt-repository命令，就不用经历上面复杂过程，可以运行命令把添加源和添加apt-key的工作全部做了。
+
 
